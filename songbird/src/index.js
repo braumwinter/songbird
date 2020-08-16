@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import './style/style.scss';
 
 import Header from './component/header/header';
+import Body from './component/body/body';
 
 import { CONTAINER } from './const/class_name';
 
@@ -13,6 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <div className={CONTAINER} key={CONTAINER}>
       <Header/>
+      <Body/>
     </div>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./../assets/font/Roboto-Regular.eot');
+    src: url('./../assets/font/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./../assets/font/Roboto-Regular.woff2') format('woff2'),
+        url('./../assets/font/Roboto-Regular.woff') format('woff'),
+        url('./../assets/font/Roboto-Regular.ttf') format('truetype'),
+        url('./../assets/font/Roboto-Regular.svg#Roboto-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$background_color: #222222;
+$text_color: #ffffff;
+$active_color: #6610f2;
+$disable_color: #375a7f;
+$border_radius: 0.7rem;
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-color: $background_color;
+
+    font-size: 10px;
+    font-family: 'Roboto';
+    color: $text_color;
+}
+
+.active {
+    background-color: $active_color;
+}
+
+.disable {
+    background-color: $disable_color;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.container {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}

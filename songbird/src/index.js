@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import { CONTAINER } from './const/class_name';
 import './style/style.scss';
+
+import Header from './component/header/header';
+
+import { CONTAINER } from './const/class_name';
 
 ReactDOM.render(
   <React.StrictMode>
     <div className={CONTAINER} key={CONTAINER}>
-
+      <Header/>
     </div>
   </React.StrictMode>,
   document.getElementById('root')

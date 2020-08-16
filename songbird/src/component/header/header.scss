@@ -1,0 +1,29 @@
+@import './../../style/style';
+
+@font-face {
+    font-family: 'Lobster';
+    src: url('./../../assets/font/Lobster-Regular.eot');
+    src: url('./../../assets/font/Lobster-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./../../assets/font/Lobster-Regular.woff2') format('woff2'),
+        url('./../../assets/font/Lobster-Regular.woff') format('woff'),
+        url('./../../assets/font/Lobster-Regular.ttf') format('truetype'),
+        url('./../../assets/font/Lobster-Regular.svg#Lobster-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 6rem;
+    font-family: 'Lobster';
+}
+
+.color_logo {
+    color: $active_color;
+}

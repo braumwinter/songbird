@@ -10,6 +10,7 @@ import { select_answers } from './../../script/select_answers';
 import { MAXIMUM_QUESTIONS, MINIMUM_QUESTIONS } from './../../const/const';
 import Answer_options from './../answer_options/answer_options';
 import Info_bird from './../info_bird/info_bird';
+import Button from './../button/button';
 
 class Body extends Component {
     constructor(props) {
@@ -32,6 +33,7 @@ class Body extends Component {
                 <Question current_topic = {this.current_topic} correct_answer = {this.correct_answer}/>
                 <Answer_options current_topic = {this.current_topic} correct_answer = {this.correct_answer} correct_index = {this.correct_index} answers = {this.answers}/>
                 <Info_bird show = 'false' current_topic = {this.current_topic} correct_answer = {this.correct_answer}/>
+                <Button/>
             </div>
         )
     }

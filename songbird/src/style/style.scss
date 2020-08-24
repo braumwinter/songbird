@@ -11,10 +11,12 @@
 }
 
 $background_color: #222222;
+$background_color_light: #303030;
 $text_color: #ffffff;
 $active_color: #6610f2;
-$disable_color: #375a7f;
-$border_radius: 0.7rem;
+$disabled_color: #375a7f;
+$border_radius: 0.5rem;
+$border_color: #555555;
 
 * {
     box-sizing: border-box;
@@ -44,7 +46,7 @@ body {
 }
 
 .disable {
-    background-color: $disable_color;
+    background-color: $disabled_color;
 }
 
 li {

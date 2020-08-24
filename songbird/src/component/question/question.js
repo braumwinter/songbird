@@ -6,7 +6,7 @@ import './question.scss';
 
 import { IMAGE_PATH, IMAGE_EXTENSION, IMAGE_BIRD, AUDIO_PATH, AUDIO_EXTENSION } from './../../const/const';
 import BIRD from './../../const/birds';
-import { CURRENT_QUESTION, IMAGE_QUESTION } from './../../const/class_name';
+import { CURRENT_QUESTION, IMAGE_QUESTION, INFO_QUESTION, NAME_QUESTION, AUDIO_QUESTION } from './../../const/class_name';
 
 class Question extends Component {
     constructor(props) {
@@ -21,22 +21,17 @@ class Question extends Component {
     }
 
     render() {
-        console.log(this.image);
-        console.log(IMAGE_PATH + this.image_name + IMAGE_EXTENSION);
         return (
-            // <img src={require("./home/priyanka/Finalproject/src/components/3.jpg")} alt="cannot display"/>
-            // {require(`${this.image}`)}
-            // './../../assets/img/bird.jpg'
-            // './../../assets/img/bird.jpg'
-            // {require('./../../assets/img/bird.jpg')}
-            <div className={CURRENT_QUESTION}>
-                <img className={IMAGE_QUESTION} src={this.image} alt="" />
-                <h2>{this.name}</h2>
-                <div>
-                    <audio controls>
-                        <source src={this.audio} type="audio/mpeg" />
+            <div className = {CURRENT_QUESTION}>
+                <img className = {IMAGE_QUESTION} src = {this.image} alt = {this.name} />
+                <div className = {INFO_QUESTION}>
+                    <h2 className = {NAME_QUESTION}>{this.name}</h2>
+                    <div className = {AUDIO_QUESTION}>
+                        <audio controls>
+                            <source src = {this.audio} type="audio/mpeg" />
                                 Тег audio не поддерживается вашим браузером.
-                    </audio>
+                        </audio>
+                    </div>
                 </div>
             </div>
         )

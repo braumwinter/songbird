@@ -17,7 +17,7 @@ class Topic_list extends Component {
             <ul className={MENU_LIST} key={MENU_LIST}>
                 {
                     MENU.map((item, index) => {
-                        if (index == this.active_item) {
+                        if (index === this.active_item) {
                             return (<li className={MENU_ITEM + ' ' + ACTIVE_ITEM} id={MENU_ITEM + '_' + index} key={MENU_ITEM + '_' + index}>
                                 {item}
                             </li>)

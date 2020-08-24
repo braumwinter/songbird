@@ -4,7 +4,9 @@ import React, {
 
 import BIRD from './../../const/birds';
 
-import { ACTIVE_ITEM, ANSWER_LIST, ANSWER_ITEM } from './../../const/class_name';
+import { ACTIVE_ITEM, ANSWER_LIST, ANSWER_ITEM, ANSWER_INDICATOR, CORRECT_ANSWER, ERROR_ANSWER } from './../../const/class_name';
+
+import './answer_options.scss';
 
 class Answer_options extends Component {
     constructor(props) {
@@ -29,14 +31,11 @@ class Answer_options extends Component {
     }
 
     render() {
-        // console.log(BIRD[this.current_topic]);
         const arr = this.answers;
-        // console.log(arr);
         return (
             <ul className={ANSWER_LIST} key={ANSWER_LIST}>
                 {
                     arr.map((item, index) => {
-                        // console.log(BIRD[this.current_topic][item]);
                         if(index === this.correct_index) {
                             return(
                             <li 
@@ -47,6 +46,7 @@ class Answer_options extends Component {
                                 data-key = {item}
                                 onClick={this.show_info_bird}
                             >
+                            <span className = {ANSWER_INDICATOR}></span>
                             {BIRD[this.current_topic][item].name}
                             </li>
                         )
@@ -60,14 +60,12 @@ class Answer_options extends Component {
                                 data-key = {item}
                                 onClick={this.show_info_bird}
                             >
+                            <span className = {ANSWER_INDICATOR}></span>
                             {BIRD[this.current_topic][item].name}
                             </li>
                         )
                         }
                     })
-                    /*arr.map((item, index) => 
-                        <li  className={'ANSW '} id={'ANSW ' + index} key={'ANSW ' + index}> {BIRD[this.current_topic][item]} </li>
-                    )*/
                 }
             </ul>
         )

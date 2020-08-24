@@ -1,6 +1,57 @@
 @import './../../style/style';
 
+.current_question {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    justify-content: start;
+
+    border-radius: $border_radius;
+    background-color: $background_color_light;
+
+    @media screen and (max-width: 780px) {
+            flex-wrap: wrap;
+            justify-content: center;
+    }
+}
+
 .image_question {
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 150px;
+
+    border-radius: $border_radius;
+}
+
+.info_question {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+
+    padding-left: 4rem;
+
+    @media screen and (max-width: 780px) {
+            padding-left: 0;
+            align-items: center;
+    }
+}
+
+.name_question {
+    font-size: 2rem;
+    font-weight: 700;
+    font-stretch: expanded;
+    padding: 2rem 0;
+}
+
+.audio_question {
+    width: 100%;
+    padding: 2rem 0;
+
+    border-top: 1px solid $border_color;
+}
+
+audio {
+    width: 100%;
 }

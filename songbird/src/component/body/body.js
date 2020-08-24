@@ -11,6 +11,8 @@ import { MAXIMUM_QUESTIONS, MINIMUM_QUESTIONS } from './../../const/const';
 import Answer_options from './../answer_options/answer_options';
 import Info_bird from './../info_bird/info_bird';
 import Button from './../button/button';
+import { BODY, ABOUT } from './../../const/class_name';
+import './body.scss';
 
 class Body extends Component {
     constructor(props) {
@@ -18,7 +20,7 @@ class Body extends Component {
         this.current_question = 0;
         this.current_topic = 0;
         this.correct_index = Math.floor(Math.random() * (MAXIMUM_QUESTIONS - MINIMUM_QUESTIONS));
-        
+
         this.answers = select_answers(BIRD[this.current_question]);
         this.correct_answer = this.answers[this.correct_index];
     }
@@ -28,12 +30,14 @@ class Body extends Component {
         console.log(this.answers);
         console.log(this.correct_answer);
         return (
-            <div>
-                <Topic_list current_question = {this.current_question}/>
-                <Question current_topic = {this.current_topic} correct_answer = {this.correct_answer}/>
-                <Answer_options current_topic = {this.current_topic} correct_answer = {this.correct_answer} correct_index = {this.correct_index} answers = {this.answers}/>
-                <Info_bird show = 'false' current_topic = {this.current_topic} correct_answer = {this.correct_answer}/>
-                <Button/>
+            <div className = {BODY}>
+                <Topic_list current_question={this.current_question} />
+                <Question current_topic={this.current_topic} correct_answer={this.correct_answer} />
+                <div className = {ABOUT}>
+                    <Answer_options current_topic={this.current_topic} correct_answer={this.correct_answer} correct_index={this.correct_index} answers={this.answers} />
+                    <Info_bird show='false' current_topic={this.current_topic} correct_answer={this.correct_answer} />
+                </div>
+                <Button />
             </div>
         )
     }

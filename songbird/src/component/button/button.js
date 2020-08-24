@@ -2,6 +2,7 @@ import React, {
     Component
 } from "react";
 
+import {BUTTON, BUTTON_ACTIVE, BUTTON_DISABLED} from './../../const/class_name';
 import './button.scss';
 
 class Button extends Component {
@@ -12,7 +13,9 @@ class Button extends Component {
 
     render() {
         return (
-            <button>{this.text}</button>
+            <button className = {BUTTON + ' ' + BUTTON_DISABLED}>
+                {this.text}
+            </button>
         )
     }
 }

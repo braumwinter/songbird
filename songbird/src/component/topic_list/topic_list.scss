@@ -2,12 +2,16 @@
 
 .menu_list {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
+    padding: 0;
 
     border-radius: $border_radius;
 
-    background-color: $disable_color;
+    background-color: $disabled_color;
+
+    overflow: hidden;
 }
 
 .menu_item {
@@ -16,11 +20,12 @@
     flex-grow: 1;
     flex-basis: auto;
     text-align: center;
-    //margin: 0.5rem 1.5rem;
-    padding: 0.5rem 1.5rem;
+    justify-content: center;
+    width: auto;
+
+    padding: 1rem 1.5rem;
 
     border-radius: $border_radius;
-    // border: 1px solid black;
 
     font-size: 1.5rem;
 }

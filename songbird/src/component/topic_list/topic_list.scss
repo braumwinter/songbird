@@ -7,22 +7,18 @@
     width: 100%;
     padding: 0;
 
-    border-radius: $border_radius;
-
     background-color: $disabled_color;
+    border-radius: $border_radius;
 
     overflow: hidden;
 }
 
 .menu_item {
     display: flex;
-    flex-shrink: 1;
     flex-grow: 1;
-    flex-basis: auto;
     text-align: center;
     justify-content: center;
     width: auto;
-
     padding: 1rem 1.5rem;
 
     border-radius: $border_radius;

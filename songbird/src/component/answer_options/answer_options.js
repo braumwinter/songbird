@@ -31,14 +31,14 @@ class Answer_options extends Component {
     show_info_bird(event) {
         const event_target = event.currentTarget;
 
-        const chosen_answer = event_target.getAttribute(DATA_ANSWER);
+        const selected_answer = event_target.getAttribute(DATA_ANSWER);
         const index = event_target.getAttribute(DATA_INDEX);
 
         const data = event_target.getAttribute(DATA_KEY);
         const topic = event_target.getAttribute(DATA_TOPIC);
 
         this.props.show_info(topic, data);
-        this.props.check_answers(chosen_answer, index);
+        this.props.check_answers(selected_answer, index);
     }
 
     render() {

@@ -7,7 +7,7 @@ import Body from './../body/body';
 
 import { CONTAINER } from './../../const/class_name';
 
-import './../../style/style.scss';
+import './container.scss';
 
 class Container extends Component {
     constructor(props) {

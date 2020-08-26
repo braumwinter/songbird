@@ -3,13 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import './style/style.scss';
-
-// import Header from './component/header/header';
-// import Body from './component/body/body';
-
-// import { CONTAINER } from './const/class_name';
 import Container from './component/container/container';
+
+import './style/style.scss';
 
 ReactDOM.render(
   <React.StrictMode>

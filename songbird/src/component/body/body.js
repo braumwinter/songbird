@@ -57,7 +57,7 @@ class Body extends Component {
             correct_answer: this.correct_answer,
             is_correct_answer: false,
             score: MAXIMUM_SCORE,
-            flag: false,
+            is_guessed: false,
             is_end: false,
         };
 
@@ -110,12 +110,12 @@ class Body extends Component {
         });
     }
 
-    check_answers(chosen_answer, index) {
-        const flag = this.state.flag;
+    check_answers(selected_answer, index) {
+        const is_guessed = this.state.is_guessed;
         const id_span = ANSWER_INDICATOR + '_' + index;
 
-        if(!flag){
-            if (chosen_answer === TRUE) {
+        if(!is_guessed){
+            if (selected_answer === TRUE) {
                 const score = this.state.score;
 
                 this.setState({

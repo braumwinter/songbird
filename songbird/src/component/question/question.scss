@@ -3,13 +3,13 @@
 .current_question {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: flex-start;
     width: 100%;
     margin: 2.5rem auto;
     padding: 2rem;
-    justify-content: flex-start;
 
-    border-radius: $border_radius;
     background-color: $background_color_light;
+    border-radius: $border_radius;
 
     @media screen and (max-width: 780px) {
             flex-wrap: wrap;
@@ -33,16 +33,17 @@
     padding-left: 4rem;
 
     @media screen and (max-width: 780px) {
-            padding-left: 0;
-            align-items: center;
+        align-items: center;
+        padding-left: 0;
     }
 }
 
 .name_question {
+    padding: 2rem 0;
+
     font-size: 2rem;
     font-weight: 700;
     font-stretch: expanded;
-    padding: 2rem 0;
 }
 
 .audio_question {

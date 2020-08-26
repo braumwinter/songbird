@@ -21,14 +21,31 @@ class Question extends Component {
     }
 
     render() {
+        const is_answer = this.props.is_answer;
+        let image, audio, audio_name, file_name, image_name, name; //, background_image;
+
+        if(!is_answer){
+            image_name = IMAGE_BIRD;
+            image = IMAGE_PATH + image_name + IMAGE_EXTENSION;
+            name = '*******';
+            audio_name = BIRD[this.props.current_topic][this.props.correct_answer].file;
+            audio = AUDIO_PATH + audio_name + AUDIO_EXTENSION;
+            // background_image = `background-image: url("${IMAGE_PATH + this.image + IMAGE_EXTENSION}");`;
+        } else {
+            file_name = BIRD[this.props.current_topic][this.props.correct_answer].file;;
+            image = IMAGE_PATH + file_name + IMAGE_EXTENSION;
+            name = BIRD[this.props.current_topic][this.props.correct_answer].name;
+            audio = AUDIO_PATH + file_name + AUDIO_EXTENSION;
+            // background_image = `background-image: url("${IMAGE_PATH + image + IMAGE_EXTENSION}");`;
+        }
         return (
             <div className = {CURRENT_QUESTION}>
-                <img className = {IMAGE_QUESTION} src = {this.image} alt = {this.name} />
+                <img className = {IMAGE_QUESTION} src = {image} alt = {name} />
                 <div className = {INFO_QUESTION}>
-                    <h2 className = {NAME_QUESTION}>{this.name}</h2>
+                    <h2 className = {NAME_QUESTION}>{name}</h2>
                     <div className = {AUDIO_QUESTION}>
                         <audio controls>
-                            <source src = {this.audio} type="audio/mpeg" />
+                            <source src = {audio} type="audio/mpeg" />
                                 Тег audio не поддерживается вашим браузером.
                         </audio>
                     </div>

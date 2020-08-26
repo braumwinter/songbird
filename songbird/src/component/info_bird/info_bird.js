@@ -12,22 +12,33 @@ import { IMAGE_PATH, IMAGE_EXTENSION, AUDIO_PATH, AUDIO_EXTENSION } from './../.
 class Info_bird extends Component {
     constructor(props) {
         super(props);
-        this.current_topic = props.current_topic;
+        /*this.current_topic = props.current_topic;
         this.correct_answer = props.correct_answer;
-        this.show = props.show;
+        this.is_show = props.is_show;
         this.message = '<p>Послушайте плеер.</p> <p>Выберите птицу из списка</p>';
-        this.bird_number = 1; // props.bird_number
-        this.bird_theme = 1; // props.bird_theme
+        this.bird_number = props.show_index; // props.bird_number
+        this.bird_theme = props.show_topic; // props.bird_theme
         this.name = BIRD[this.bird_theme][this.bird_number].name;
         this.latin = BIRD[this.bird_theme][this.bird_number].latin;
         this.file_name = BIRD[this.bird_theme][this.bird_number].file;
         this.image = IMAGE_PATH + this.file_name + IMAGE_EXTENSION;
         this.audio = AUDIO_PATH + this.file_name + AUDIO_EXTENSION;
-        this.text = BIRD[this.bird_theme][this.bird_number].info;
+        this.text = BIRD[this.bird_theme][this.bird_number].info;*/
+        this.state = {
+            is_show: props.is_show,
+            topic: props.show_topic,
+            index: props.show_index,
+        };
     }
 
     render() {
-        if (this.show) {
+        // console.log('info is_show ', this.state.is_show);
+        const is_show = this.props.is_show;
+        const topic = this.props.show_topic;
+        const index = this.props.show_index;
+        // console.log('info is_show ', is_show);
+
+        if (!is_show) {
             return (
                 <div className={INFO_BIRD + ' ' + INFO_BIRD_BLOCK}>
                     <p>Послушайте плеер.</p>
@@ -35,22 +46,48 @@ class Info_bird extends Component {
                 </div>
             );
         } else {
+            
+            // console.log(topic, index);
+            const name = BIRD[topic][index].name;
+            const latin = BIRD[topic][index].latin;
+            const file_name = BIRD[topic][index].file;
+            const image = IMAGE_PATH + file_name + IMAGE_EXTENSION;
+            const audio = AUDIO_PATH + file_name + AUDIO_EXTENSION;
+            const text = BIRD[topic][index].info;
             return (
                 <div key={INFO_BIRD} className={INFO_BIRD}>
                     <div key={INFO_CARD} className={INFO_CARD}>
-                        <img key={INFO_BIRD_IMAGE} className={INFO_BIRD_IMAGE} src={this.image} alt={this.file_name} />
-                        <div key={INFO_CARD_BODY} className={INFO_CARD_BODY}>
-                            <h2 key={INFO_BIRD_NAME} className={INFO_BIRD_NAME}>{this.name}</h2>
-                            <h3 key={INFO_BIRD_LATIN} className={INFO_BIRD_LATIN}>{this.latin}</h3>
+                        <img 
+                            key={INFO_BIRD_IMAGE} 
+                            className={INFO_BIRD_IMAGE} 
+                            src={image} 
+                            alt={file_name}
+                            />
+                        <div 
+                            key={INFO_CARD_BODY} 
+                            className={INFO_CARD_BODY}
+                        >
+                            <h2 
+                                key={INFO_BIRD_NAME} 
+                                className={INFO_BIRD_NAME}
+                            >
+                                {name}
+                            </h2>
+                            <h3 
+                                key={INFO_BIRD_LATIN} 
+                                className={INFO_BIRD_LATIN}
+                            >
+                                {latin}
+                            </h3>
                             <div key={INFO_BIRD_AUDIO} className={INFO_BIRD_AUDIO}>
                                 <audio controls>
-                                    <source src={this.audio} type="audio/mpeg" />
+                                    <source src={audio} type="audio/mpeg" />
                                         Тег audio не поддерживается вашим браузером.
                                 </audio>
                             </div>
                         </div>
                     </div>
-                    <p key={INFO_BIRD_TEXT} className={INFO_BIRD_TEXT}>{this.text}</p>
+                    <p key={INFO_BIRD_TEXT} className={INFO_BIRD_TEXT}>{text}</p>
                 </div>
             )
         }

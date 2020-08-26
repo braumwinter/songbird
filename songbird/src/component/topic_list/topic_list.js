@@ -13,11 +13,13 @@ class Topic_list extends Component {
     }
 
     render() {
+        const actived_item = this.props.current_question;
+
         return (
             <ul className={MENU_LIST} key={MENU_LIST}>
                 {
                     MENU.map((item, index) => {
-                        if (index === this.active_item) {
+                        if (index === actived_item) {
                             return (<li className={MENU_ITEM + ' ' + ACTIVE_ITEM} id={MENU_ITEM + '_' + index} key={MENU_ITEM + '_' + index}>
                                 {item}
                             </li>)

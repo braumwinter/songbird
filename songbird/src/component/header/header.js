@@ -13,12 +13,14 @@ class Header extends Component {
     }
 
     render() {
+        const total_score = this.props.score;
+        // console.log('header score ', total_score);
         return (
             <header className="header">
                 <div className="logo">
                     <h1>Song<span className="color_logo">bird</span></h1>
                 </div>
-                <div className="score">Score: <span id="score">{this.state.total_score}</span></div>
+                <div className="score">Score: <span id="score">{total_score}</span></div>
             </header>
         )
     }

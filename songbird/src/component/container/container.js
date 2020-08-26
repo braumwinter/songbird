@@ -2,12 +2,12 @@ import React, {
     Component
 } from "react";
 
-import './../../style/style.scss';
-
 import Header from './../header/header';
 import Body from './../body/body';
 
 import { CONTAINER } from './../../const/class_name';
+
+import './../../style/style.scss';
 
 class Container extends Component {
     constructor(props) {
@@ -20,8 +20,8 @@ class Container extends Component {
     }
 
     change_score(score){
-        // console.log('SCORE = ', score);
         const total_score = this.state.score + score;
+
         this.setState({
             score: total_score
         });
@@ -29,21 +29,18 @@ class Container extends Component {
 
     render() {
         const total_score = this.state.score;
-        // console.log('container score ', total_score);
+
         return (
-            <div className={CONTAINER} key={CONTAINER}>
-                <Header 
-                    score={total_score}
-                    change_score = {this.change_score}
+            <div className = { CONTAINER } key = { CONTAINER }>
+                <Header
+                    score = { total_score }
                 />
-                <Body 
-                    change_score = {this.change_score}
+                <Body
+                    change_score = { this.change_score }
                 />
             </div>
         )
     }
 }
 
-
 export default Container;
-

@@ -2,25 +2,45 @@ import React, {
     Component
 } from "react";
 
+import {
+    STRING_SONG,
+    STRING_BIRD,
+    STRING_SCORE
+} from './../../const/const';
+
+import {
+    HEADER,
+    LOGO,
+    COLOR_LOGO,
+    SCORE,
+    TOTAL_SCORE,
+} from './../../const/class_name';
+
 import './header.scss';
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            total_score: 0
-        };
-    }
-
     render() {
         const total_score = this.props.score;
-        // console.log('header score ', total_score);
+
         return (
-            <header className="header">
-                <div className="logo">
-                    <h1>Song<span className="color_logo">bird</span></h1>
+            <header className = { HEADER } key = { HEADER }>
+                <div className = { LOGO } key = { LOGO }>
+                    <h1>
+                        { STRING_SONG }
+                        <span className = { COLOR_LOGO }>
+                            { STRING_BIRD }
+                        </span>
+                    </h1>
                 </div>
-                <div className="score">Score: <span id="score">{total_score}</span></div>
+                <div className = { SCORE } key = { SCORE }>
+                    { STRING_SCORE }
+                    <span
+                        className = { TOTAL_SCORE }
+                        key = { TOTAL_SCORE }
+                        id = { TOTAL_SCORE }>
+                            { total_score }
+                        </span>
+                    </div>
             </header>
         )
     }

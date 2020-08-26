@@ -1,5 +1,11 @@
 export const CONTAINER = 'container';
 
+export const HEADER = 'header';
+export const LOGO = 'logo';
+export const COLOR_LOGO = 'color_logo';
+export const SCORE = 'score';
+export const TOTAL_SCORE = 'total_score';
+
 export const MENU_LIST = 'menu_list';
 export const MENU_ITEM = 'menu_item';
 export const ACTIVE_ITEM = 'active';

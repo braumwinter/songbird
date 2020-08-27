@@ -31,3 +31,10 @@ export const DATA_KEY = 'data-key';
 export const DATA_TOPIC = 'data-topic';
 
 export const BUTTON_TEXT = 'NEXT';
+
+export const AUDIO_CORRECT = './assets/audio/correct.mp3';
+export const AUDIO_ERROR = './assets/audio/error.mp3';
+export const AUDIO_WIN = './assets/audio/win.mp3';
+export const AUDIO_LOSE = './assets/audio/lose.mp3';
+
+export const AUDIO_QUESTION_ID = 'audio_question_id';

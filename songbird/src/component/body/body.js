@@ -20,10 +20,17 @@ import {
     FIRST_TOPIC,
     FIRST_INDEX,
     TRUE,
-    STRING_CORRECT_ANSWER
+    STRING_CORRECT_ANSWER,
+    AUDIO_CORRECT,
+    AUDIO_ERROR,
+    AUDIO_WIN,
+    AUDIO_LOSE,
+    AUDIO_QUESTION_ID,
+    AUDIO_PATH,
+    AUDIO_EXTENSION
 } from './../../const/const';
 
-import{
+import {
     BODY,
     ABOUT,
     ANSWER_INDICATOR,
@@ -102,6 +109,11 @@ class Body extends Component {
             flag: false,
         })
 
+        const audio_name = BIRD[next_topic][correct_answer].file;
+        const audio = AUDIO_PATH + audio_name + AUDIO_EXTENSION;
+        const player = document.getElementById(AUDIO_QUESTION_ID);
+        player.setAttribute('src', audio);
+
         const indicators = document.getElementsByClassName(ANSWER_INDICATOR);
         const array_indicators = Array.from(indicators);
 
@@ -113,8 +125,9 @@ class Body extends Component {
     check_answers(selected_answer, index) {
         const is_guessed = this.state.is_guessed;
         const id_span = ANSWER_INDICATOR + '_' + index;
+        let audio_path;
 
-        if(!is_guessed){
+        if (!is_guessed) {
             if (selected_answer === TRUE) {
                 const score = this.state.score;
 
@@ -127,6 +140,11 @@ class Body extends Component {
 
                 document.getElementById(id_span).classList.add(CORRECT_ANSWER);
 
+                const player = document.getElementById(AUDIO_QUESTION_ID);
+                player.pause();
+
+                audio_path = AUDIO_CORRECT;
+
                 this.props.change_score(score);
             } else {
                 const change_score = this.state.score - 1;
@@ -135,8 +153,13 @@ class Body extends Component {
                     score: change_score,
                 })
 
+                audio_path = AUDIO_ERROR;
+
                 document.getElementById(id_span).classList.add(ERROR_ANSWER);
             }
+
+            const audio = new Audio(audio_path);
+            audio.play();
         }
     }
 
@@ -158,32 +181,32 @@ class Body extends Component {
         console.log(STRING_CORRECT_ANSWER, BIRD[current_topic][correct_answer].name);
 
         return (
-            <div className = { BODY } key = { BODY }>
+            <div className={BODY} key={BODY}>
                 <Topic_list
-                    current_question = { current_question }
+                    current_question={current_question}
                 />
                 <Question
-                    is_answer = { is_answer }
-                    current_topic = { current_topic }
-                    correct_answer = { correct_answer }
+                    is_answer={is_answer}
+                    current_topic={current_topic}
+                    correct_answer={correct_answer}
                 />
-                <div className = { ABOUT } key = { ABOUT }>
+                <div className={ABOUT} key={ABOUT}>
                     <Answer_options
-                        current_topic = { current_topic }
-                        correct_index = { correct_index }
-                        answers = { answers }
-                        show_info = { this.show_info }
-                        check_answers = { this.check_answers }
+                        current_topic={current_topic}
+                        correct_index={correct_index}
+                        answers={answers}
+                        show_info={this.show_info}
+                        check_answers={this.check_answers}
                     />
                     <Info_bird
-                        is_show = { is_show_info_bird }
-                        show_topic = { show_topic_info_bird }
-                        show_index = { show_index_info_bird }
+                        is_show={is_show_info_bird}
+                        show_topic={show_topic_info_bird}
+                        show_index={show_index_info_bird}
                     />
                 </div>
                 <Button
-                    is_activate_button = { activate_button }
-                    show_next_question = { this.show_next_question }
+                    is_activate_button={activate_button}
+                    show_next_question={this.show_next_question}
                 />
             </div>
         )

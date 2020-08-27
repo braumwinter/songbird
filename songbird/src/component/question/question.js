@@ -11,7 +11,8 @@ import {
     AUDIO_PATH,
     AUDIO_EXTENSION,
     STRING_HIDDEN_NAME,
-    STRING_AUDIO_NOT_SUPPORTED
+    STRING_AUDIO_NOT_SUPPORTED,
+    AUDIO_QUESTION_ID
 } from './../../const/const';
 
 import {
@@ -29,19 +30,18 @@ class Question extends Component {
         const is_answer = this.props.is_answer;
         const current_topic = this.props.current_topic;
         const correct_answer = this.props.correct_answer;
-        let image, audio, audio_name, file_name, image_name, name;
+        const audio_name = BIRD[current_topic][correct_answer].file;
+        const audio = AUDIO_PATH + audio_name + AUDIO_EXTENSION;
+        let image, file_name, image_name, name;
 
-        if(!is_answer){
+        if (!is_answer) {
             image_name = IMAGE_BIRD;
             image = IMAGE_PATH + image_name + IMAGE_EXTENSION;
             name = STRING_HIDDEN_NAME;
-            audio_name = BIRD[current_topic][correct_answer].file;
-            audio = AUDIO_PATH + audio_name + AUDIO_EXTENSION;
         } else {
             file_name = BIRD[current_topic][correct_answer].file;;
             image = IMAGE_PATH + file_name + IMAGE_EXTENSION;
             name = BIRD[current_topic][correct_answer].name;
-            audio = AUDIO_PATH + file_name + AUDIO_EXTENSION;
         }
 
         return (
@@ -51,13 +51,13 @@ class Question extends Component {
                     key = { IMAGE_QUESTION }
                     src = { image }
                     alt = { name }
-                    />
+                />
                 <div className = { INFO_QUESTION } key = { INFO_QUESTION }>
                     <h2 className = { NAME_QUESTION } key = { NAME_QUESTION } >{ name }</h2>
                     <div className = { AUDIO_QUESTION } key = { AUDIO_QUESTION }>
-                        <audio controls>
-                            <source src = { audio } type="audio/mpeg" />
-                                { STRING_AUDIO_NOT_SUPPORTED }
+                        <audio controls id = { AUDIO_QUESTION_ID } key = { AUDIO_QUESTION_ID }>
+                            <source src = { audio } type = 'audio/mpeg' />
+                            { STRING_AUDIO_NOT_SUPPORTED }
                         </audio>
                     </div>
                 </div>

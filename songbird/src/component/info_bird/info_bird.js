@@ -11,7 +11,8 @@ import {
     AUDIO_EXTENSION,
     STRING_LISTEN_PLAYER,
     STRING_SHOOSE_BIRD,
-    STRING_AUDIO_NOT_SUPPORTED
+    STRING_AUDIO_NOT_SUPPORTED,
+    AUDIO_INFO_ID
 } from './../../const/const';
 
 import {
@@ -66,7 +67,7 @@ class Info_bird extends Component {
                                 { latin }
                             </h3>
                             <div className = { INFO_BIRD_AUDIO } key = { INFO_BIRD_AUDIO }>
-                                <audio controls>
+                                <audio controls id = { AUDIO_INFO_ID } key = { AUDIO_INFO_ID }>
                                     <source src = { audio } type = "audio/mpeg" />
                                         { STRING_AUDIO_NOT_SUPPORTED }
                                 </audio>
@@ -77,6 +78,8 @@ class Info_bird extends Component {
                 </div>
             )
         }
+
+        
     }
 }
 

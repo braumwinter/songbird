@@ -27,7 +27,8 @@ import {
     AUDIO_LOSE,
     AUDIO_QUESTION_ID,
     AUDIO_PATH,
-    AUDIO_EXTENSION
+    AUDIO_EXTENSION,
+    AUDIO_INFO_ID
 } from './../../const/const';
 
 import {
@@ -66,6 +67,7 @@ class Body extends Component {
             score: MAXIMUM_SCORE,
             is_guessed: false,
             is_end: false,
+            selected_info_bird: 0,
         };
 
         this.show_info = this.show_info.bind(this);
@@ -76,11 +78,20 @@ class Body extends Component {
     }
 
     show_info(topic, data) {
+        const selected_info_bird = this.state.selected_info_bird;
+
         this.setState({
             is_show: true,
             show_topic: topic,
             show_index: data,
         })
+
+        if(selected_info_bird > 0) {
+            const audio_name = BIRD[topic][data].file;
+            const audio = AUDIO_PATH + audio_name + AUDIO_EXTENSION;
+            const player = document.getElementById(AUDIO_INFO_ID);
+            player.setAttribute('src', audio);
+        }
     }
 
     show_answer() {
@@ -107,6 +118,8 @@ class Body extends Component {
             answers: array_answers,
             correct_answer: correct_answer,
             flag: false,
+            is_guessed: false,
+            selected_info_bird: 0,
         })
 
         const audio_name = BIRD[next_topic][correct_answer].file;
@@ -125,6 +138,7 @@ class Body extends Component {
     check_answers(selected_answer, index) {
         const is_guessed = this.state.is_guessed;
         const id_span = ANSWER_INDICATOR + '_' + index;
+        const selected_info_bird = this.state.selected_info_bird + 1;
         let audio_path;
 
         if (!is_guessed) {
@@ -136,6 +150,8 @@ class Body extends Component {
                     activate_button: true,
                     score: MAXIMUM_SCORE,
                     flag: true,
+                    is_guessed: true,
+                    selected_info_bird: selected_info_bird,
                 })
 
                 document.getElementById(id_span).classList.add(CORRECT_ANSWER);
@@ -151,6 +167,7 @@ class Body extends Component {
 
                 this.setState({
                     score: change_score,
+                    selected_info_bird: selected_info_bird,
                 })
 
                 audio_path = AUDIO_ERROR;

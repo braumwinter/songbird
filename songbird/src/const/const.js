@@ -38,3 +38,4 @@ export const AUDIO_WIN = './assets/audio/win.mp3';
 export const AUDIO_LOSE = './assets/audio/lose.mp3';
 
 export const AUDIO_QUESTION_ID = 'audio_question_id';
+export const AUDIO_INFO_ID = 'audio_info_id';

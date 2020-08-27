@@ -10,7 +10,7 @@ import {
     DATA_ANSWER,
     DATA_INDEX,
     DATA_KEY,
-    DATA_TOPIC
+    DATA_TOPIC,
  } from './../../const/const';
 
 import {

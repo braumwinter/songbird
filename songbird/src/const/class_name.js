@@ -36,7 +36,10 @@ export const INFO_BIRD_LATIN = 'info_bird_latin';
 export const INFO_BIRD_AUDIO = 'info_bird_audio';
 export const INFO_BIRD_TEXT = 'info_bird_text';
 
-
 export const BUTTON = 'button';
 export const BUTTON_ACTIVE = 'button_active';
 export const BUTTON_DISABLED = 'button_disabled';
+
+export const END_TITLE = 'end_title';
+export const END_TEXT = 'end_text';
+export const END_WIN = 'end_win';

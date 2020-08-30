@@ -17,6 +17,7 @@ class Container extends Component {
         };
 
         this.change_score = this.change_score.bind(this);
+        this.reset_score = this.reset_score.bind(this);
     }
 
     change_score(score){
@@ -24,6 +25,12 @@ class Container extends Component {
 
         this.setState({
             score: total_score
+        });
+    }
+
+    reset_score(){
+        this.setState({
+            score: 0,
         });
     }
 
@@ -37,6 +44,7 @@ class Container extends Component {
                 />
                 <Body
                     change_score = { this.change_score }
+                    reset_score = { this.reset_score }
                 />
             </div>
         )

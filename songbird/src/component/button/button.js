@@ -29,7 +29,7 @@ class Button extends Component {
         if(is_activated_button) {
             return (
                 <button 
-                    className = {BUTTON + ' ' + BUTTON_ACTIVE}
+                    className = { BUTTON + ' ' + BUTTON_ACTIVE }
                     key = { BUTTON }
                     onClick = {this.click_next_question}
                 >
@@ -40,7 +40,7 @@ class Button extends Component {
         } else {
             return (
                 <button 
-                    className = {BUTTON + ' ' + BUTTON_DISABLED}
+                    className = { BUTTON + ' ' + BUTTON_DISABLED }
                     key = { BUTTON }
                 >
                     { BUTTON_TEXT }

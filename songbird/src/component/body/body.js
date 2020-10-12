@@ -203,7 +203,13 @@ class Body extends Component {
 
                 this.props.change_score(score);
             } else {
-                const change_score = this.state.score - 1;
+                let change_score;
+
+                if((this.state.score === 1) || (this.state.score === 0)) {
+                    change_score = 0;
+                } else {
+                    change_score = this.state.score - 1;
+                }
 
                 this.setState({
                     score: change_score,

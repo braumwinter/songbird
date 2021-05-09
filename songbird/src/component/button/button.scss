@@ -1,0 +1,36 @@
+@import './../../style/style';
+
+.button {
+    width: 100%;
+    margin: 3rem auto;
+    padding: 1.5rem 2rem;
+
+    background-color: $background_color_light;
+    border: 1px solid $border_color;
+    border-radius: $border_radius;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $text_color;
+
+    cursor: default;
+}
+
+.button_active {
+    background-color: $disabled_color;
+
+    cursor: pointer;
+}
+
+.button_active:hover {
+    background-color: $active_color;
+
+    pointer-events: auto;
+}
+
+.button_disabled {
+    background-color: $background_color_light;
+
+    cursor: not-allowed;
+    pointer-events: none;
+}

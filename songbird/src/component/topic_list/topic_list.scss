@@ -1,0 +1,27 @@
+@import './../../style/style';
+
+.menu_list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+
+    background-color: $disabled_color;
+    border-radius: $border_radius;
+
+    overflow: hidden;
+}
+
+.menu_item {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+    padding: 1rem 1.5rem;
+
+    border-radius: $border_radius;
+
+    font-size: 1.5rem;
+}

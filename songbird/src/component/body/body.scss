@@ -1,0 +1,39 @@
+@import './../../style/style';
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media screen and (max-width: 780px) {
+        flex-wrap: wrap;
+    }
+}
+
+.end_title {
+    margin: 3rem auto;
+
+    font-size: 6rem;
+    text-align: center;
+}
+
+.end_text {
+    margin: 1rem auto;
+
+    font-size: 2rem;
+    text-align: center;
+}
+
+.end_win {
+    margin: 1rem auto;
+
+    font-size: 4rem;
+    text-align: center;
+}

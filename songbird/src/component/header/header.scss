@@ -1,0 +1,33 @@
+@import './../../style/style';
+
+@font-face {
+    font-family: 'Mr De Haviland';
+    src: url('./../../assets/font/MrDeHaviland-Regular.eot');
+    src: url('./../../assets/font/MrDeHaviland-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./../../assets/font/MrDeHaviland-Regular.woff2') format('woff2'),
+        url('./../../assets/font/MrDeHaviland-Regular.woff') format('woff'),
+        url('./../../assets/font/MrDeHaviland-Regular.ttf') format('truetype'),
+        url('./../../assets/font/MrDeHaviland-Regular.svg#MrDeHaviland-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 8rem;
+    font-family: 'Mr De Haviland', cursive;
+}
+
+.color_logo {
+    color: $active_color;
+}
+
+.score {
+    font-size: 2rem;
+}

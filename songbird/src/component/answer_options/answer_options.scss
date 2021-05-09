@@ -1,0 +1,61 @@
+@import './../../style/style';
+
+.answer_list {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+
+    background-color: $background_color_light;
+    border: 1px solid $border_color;
+    border-radius: $border_radius;
+
+    @media screen and (max-width: 780px) {
+            width: 100%;
+    }
+}
+
+.answer_item {
+    padding: 1.5rem 2rem;
+
+    font-size: 1.5rem;
+
+    background-color: $background_color_light;
+
+    cursor: pointer;
+}
+
+.answer_item:not(:first-child){
+    border-top: 1px solid $border_color;
+}
+
+.answer_item:first-child {
+    border-radius: $border_radius $border_radius 0 0;
+}
+
+.answer_item:last-child {
+    border-radius: 0 0 $border_radius $border_radius;
+}
+
+.answer_item:hover {
+    background-color: $border_color;
+}
+
+.answer_indicator {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin: auto 1.5rem;
+
+    background-color: $border_color;
+    border-radius: 100%;
+
+    transition: 0.1s;
+}
+
+.correct_answer {
+    background-color: green;
+}
+
+.error_answer {
+    background-color: red;
+}

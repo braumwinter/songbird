@@ -1,0 +1,72 @@
+@import './../../style/style';
+
+.info_bird {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    padding: 1.5rem 2rem;
+
+    background-color: $background_color_light;
+    border: 1px solid $border_color;
+    border-radius: $border_radius;
+
+    font-size: 1.5rem;
+
+    @media screen and (max-width: 780px) {
+            width: 100%;
+            margin-top: 2rem;
+    }
+}
+
+.info_bird_block {
+    display: flex;
+    min-height: 100%;
+    align-self: stretch;
+    justify-self: stretch;
+}
+
+.info_card {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+
+    @media screen and (max-width: 1000px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.info_bird_image {
+    width: 200px;
+    height: 150px;
+
+    border-radius: $border_radius;
+}
+
+.info_card_body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 2rem;
+}
+
+.info_bird_name, .info_bird_latin {
+    padding: 1rem 0;
+
+    border-bottom: 1px solid $border_color;
+
+    text-align: start;
+
+    @media screen and (max-width: 1000px) {
+        text-align: center;
+    }
+}
+
+.info_bird_audio {
+    margin-top: 1rem;
+}
+
+.info_bird_text {
+    margin: 2rem auto;
+}
